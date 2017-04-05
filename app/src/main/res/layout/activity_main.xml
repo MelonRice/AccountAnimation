@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#e9e9e9">
+
+
+
+    <RelativeLayout
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginLeft="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp"
+            android:id="@+id/tv_description"
+            android:text="把生命浪费在美好的事物上。"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <!-- cardUseCompatPadding是否设置内边距，v21+的版本和之前的版本仍旧具有一样的计算方式
+    设为false，阴影在本身的尺寸基础上，沿边线朝外放，设为true则朝内收-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="300dp"
+        android:layout_height="360dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp">
+
+
+                <View
+                    android:id="@+id/tag"
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:background="@color/colorAccent"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="50dp"
+                    android:text="@string/login"
+                    android:textColor="@color/colorOrange"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_alignBottom="@id/tag"
+                    android:layout_marginRight="40dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="#e3e3e3"
+                    android:text="前往注册 →"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:paddingEnd="30dp"
+                android:paddingStart="50dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#c5c5c5">
+
+                    <EditText
+                        android:id="@+id/et_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_bg_edit"
+                        android:hint="@string/Username"
+                        android:inputType="textPersonName"
+                        android:paddingBottom="8dp"
+                        android:paddingTop="8dp"
+                        android:textColor="#666666"
+                        android:textCursorDrawable="@drawable/bg_input_cursor"
+                        android:textSize="16sp"
+                        />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:paddingEnd="30dp"
+                android:paddingStart="50dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#9b9b9b"
+                    android:textColorHint="#c5c5c5">
+
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_bg_edit"
+                        android:hint="@string/Password"
+                        android:inputType="textPassword"
+                        android:paddingBottom="2dp"
+                        android:textColor="#666666"
+                        android:textCursorDrawable="@drawable/bg_input_cursor"
+                        android:textSize="16sp"
+                        />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/bt_go"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bt_shape"
+                    android:stateListAnimator="@drawable/state_list_animator_z"
+                    android:text="@string/go"
+                    android:textColor="@color/colorPrimary"
+                    >
+                </Button>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/forgot_your_password"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/cv"
+        android:layout_alignTop="@id/cv"
+        android:layout_marginEnd="-20dp"
+        android:layout_marginTop="25dp"
+        android:src="@mipmap/ic_send_rotate"
+        app:backgroundTint="@color/colorAccent"
+        android:transitionName="loginFab"
+        app:fabSize="normal"
+        />
+
+</RelativeLayout>
